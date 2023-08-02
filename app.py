@@ -50,7 +50,36 @@ with main_tab:
 with model_tab:
     st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
     st.write("This is the model used:")
-    model_code = st.text_area("", "")
+    st.write("Dataset head:")
+    st.dataframe(df.head(10))
+    st.header("Dataset column details")
+    # Define the column names and descriptions
+columns = [
+    ("objid", "This is just an identifier issued by SDSS."),
+    ("ra", "The right ascension is the angular distance measured eastward along the celestial equator from the Sun at the March equinox to the hour circle of the point above the earth in question."),
+    ("dec", "The declination is the angular distance of the point north or south of the celestial equator."),
+    ("u", "Better known as Ultraviolet. The Thuan-Gunn astronomic magnitude system. u, g, r, i, z represent the response of the 5 bands of the telescope."),
+    ("g", "Better known as Green. The Thuan-Gunn astronomic magnitude system. u, g, r, i, z represent the response of the 5 bands of the telescope."),
+    ("r", "Better known as Red. The Thuan-Gunn astronomic magnitude system. u, g, r, i, z represent the response of the 5 bands of the telescope."),
+    ("i", "Better known as Near Infrared. The Thuan-Gunn astronomic magnitude system. u, g, r, i, z represent the response of the 5 bands of the telescope."),
+    ("z", "Better known as Infrared. The Thuan-Gunn astronomic magnitude system. u, g, r, i, z represent the response of the 5 bands of the telescope."),
+    ("run", "Run number, which identifies the specific scan."),
+    ("rerun", "Rerun number, which specifies how the image was processed."),
+    ("camcol", "Camera column, a number that identifies the scanline within the run."),
+    ("field", "Field number"),
+    ("specobjid", "Object identifier"),
+    ("class", "Object class (star, galaxy, or quasar)"),
+    ("redshift", "Final redshift, a phenomenon where electromagnetic radiation (such as light) from an object undergoes an increase in wavelength. Provides information about the distance of the object from earth."),
+    ("plate", "Plate number, plate is a round, aluminum disk onto which is drilled a specific pattern of holes, each hole corresponds to the location of an astronomical object in the sky."),
+    ("mjd", "The date of observation of the object."),
+    ("fiberid", "The SDSS spectrograph uses optical fibers to direct the light at the focal plane from individual objects to the slithead. Each object is assigned a corresponding fiberID.")
+]
+    st.table(columns)
+
+    
+    st.write("Dataset stats")
+    st.dataframe(df.describe())
+    st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
 
 # Content for the Info tab
 with info_tab:
