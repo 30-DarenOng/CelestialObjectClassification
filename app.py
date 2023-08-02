@@ -46,13 +46,11 @@ main_tab, model_tab, info_tab = st.tabs(["Main", "Model", "Info"])
 with main_tab:
     st.write("Welcome to the celestial object classifier. Enter the required values in the sidebar and click on 'Predict' to classify the object.")
 
-# Content for the Model tab
-with model_tab:
-    st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
-    st.write("This is the model used:")
+    st.write("To see examples for input look at the table below")
     st.write("Dataset head:")
     st.dataframe(df.head(10))
     st.header("Dataset column details")
+
     # Define the column names and descriptions
     columns = [
     ("objid", "This is just an identifier issued by SDSS."),
@@ -77,7 +75,18 @@ with model_tab:
     st.table(columns)
     st.write("Dataset stats")
     st.dataframe(df.describe())
+
+
+# Content for the Model tab
+with model_tab:
     st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
+    st.write("This is the model used:")
+    
+    st.write("Dataset stats")
+    st.dataframe(df.describe())
+    st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
+
+
 
 # Content for the Info tab
 with info_tab:
