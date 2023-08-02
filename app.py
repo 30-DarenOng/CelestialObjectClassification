@@ -22,7 +22,7 @@ with st.sidebar:
     st.header("User Input Values")
     user_input = []
     for feature in features:
-        value = st.number_input(f'Enter {feature}: ', step=0.01)
+        value = st.number_input(f'Enter {feature}: ', step=0.000000000000001, format="%.15f")
         user_input.append(value)
     user_input = np.array(user_input).reshape(1, -1)
 
