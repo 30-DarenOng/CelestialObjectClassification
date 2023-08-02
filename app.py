@@ -54,7 +54,7 @@ with model_tab:
     st.dataframe(df.head(10))
     st.header("Dataset column details")
     # Define the column names and descriptions
-columns = [
+    columns = [
     ("objid", "This is just an identifier issued by SDSS."),
     ("ra", "The right ascension is the angular distance measured eastward along the celestial equator from the Sun at the March equinox to the hour circle of the point above the earth in question."),
     ("dec", "The declination is the angular distance of the point north or south of the celestial equator."),
@@ -73,8 +73,7 @@ columns = [
     ("plate", "Plate number, plate is a round, aluminum disk onto which is drilled a specific pattern of holes, each hole corresponds to the location of an astronomical object in the sky."),
     ("mjd", "The date of observation of the object."),
     ("fiberid", "The SDSS spectrograph uses optical fibers to direct the light at the focal plane from individual objects to the slithead. Each object is assigned a corresponding fiberID.")
-]
-
+    ]
     st.table(columns)
     st.write("Dataset stats")
     st.dataframe(df.describe())
