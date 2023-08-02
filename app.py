@@ -74,9 +74,8 @@ columns = [
     ("mjd", "The date of observation of the object."),
     ("fiberid", "The SDSS spectrograph uses optical fibers to direct the light at the focal plane from individual objects to the slithead. Each object is assigned a corresponding fiberID.")
 ]
-    st.table(columns)
 
-    
+    st.table(columns)
     st.write("Dataset stats")
     st.dataframe(df.describe())
     st.write("This model is trained on a dataset of celestial objects and can classify them into stars, galaxies, or quasars based on the input values.")
